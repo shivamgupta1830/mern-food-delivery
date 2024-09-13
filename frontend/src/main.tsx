@@ -1,5 +1,6 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
+import Auth0ProviderWithNavigate from "./auth/auth0ProviderWithNavigate";
 
 import "./index.css";
 
@@ -9,7 +10,9 @@ import AppRoutes from "./AppRoutes";
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <Router>
-      <AppRoutes />
+      <Auth0ProviderWithNavigate>
+        <AppRoutes />
+      </Auth0ProviderWithNavigate>
     </Router>
   </StrictMode>
 );
